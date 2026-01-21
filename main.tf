@@ -99,7 +99,7 @@ resource "terraform_data" "main_delete" {
 
 resource "aws_launch_template" "main" {
   name = "${var.project}-${var.environment}-${var.component}"
-  image_id = "ami-test" #select ami which we created roboshop-dev-catalogue 
+  image_id =  aws_ami_from_instance.main.id #select ami which we created roboshop-dev-catalogue 
   instance_initiated_shutdown_behavior = "terminate"
   instance_type = "t3.micro"
   vpc_security_group_ids = [local.sg_id]
