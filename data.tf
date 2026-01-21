@@ -21,7 +21,7 @@ data "aws_ami" "ami" {
 
 
 data "aws_ssm_parameter" "sg_id" { #export from ssm
-  name = "/${var.project}/${var.environment}/{var.component}_sg_id"
+  name = "/${var.project}/${var.environment}/${var.component}_sg_id"
 }
 
 data "aws_ssm_parameter" "private_subnet_ids" {
